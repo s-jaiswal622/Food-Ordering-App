@@ -2,37 +2,353 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.div-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: #ececec;
+  position: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.tag-list {
+  position: sticky;
+  padding: 10px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  padding: 4px 8px;
+  margin: 4px;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid blueviolet;
   }
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.selected-tag {
+  border: 1px solid whitesmoke;
+  background-color: blueviolet;
+  color: whitesmoke;
+}
+
+.unselected-tag {
+  border: 1px solid #ccc;
+}
+
+.chip-label {
+  margin-right: 8px;
+}
+
+.left-div {
+  overflow: hidden;
+  position: relative;
+  width: 70%;
+  background-color: whitesmoke;
+  
+}
+
+.right-div {
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+}
+
+.left-div-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: blue;
+  height: 80vh;
+  width: 70%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: whitesmoke;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.meal-list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.meal-list-right-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px;
+  width:60%;
+}
+
+.button {
+  display: inline-block;
+  height: 30px;
+  width: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  border-color: blue;
+  border-width: 1px;
+  color: blue;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+.meal-image {
+  width: 150px;
+  height: 100px;
+}
+
+.meal-list-right-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.meal-title {
+  font-weight: bold;
+}
+
+.meal-details {
+  font-size: small;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.meal-actions {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.image-container {
+  display: flex;
+  gap: 6px;
+  margin-right: 40px;
+  align-items: center;
+}
+
+.small-image {
+  width: 40px;
+  height: 40px;
+}
+
+.meal-price {
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.drink-div {
+  border-color: blueviolet;
+  border: 1px solid blueviolet;
+  height: 30px;
+  padding: 5px;
+  background-color: crimson;
   color: white;
+  border-width: 1px solid;
+  font-size: small;
+  text-align: "center";
+  
+}
+.Vine {
+  background-color: #9B2242;
+}
+.Juice {
+  background-color:darkorange;
+}
+.Beer {
+  background-color:  #f28e1c;
+}
+.meal-list-card-container {
+  overflow-y: auto;
+  max-height: 550px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.selected-meal-div {
+  width: 300px;
+  border: 1px solid #B6D0E2;
+}
+.selected-meal-item {
+  display: flex;
+  padding: 20px 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid #B6D0E2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.price-and-button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
+
+
+
+
+.accordion-icon {
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  height: 8px;
+  pointer-events: none;
+  transform: translateY(-2px) rotate(45deg);
+  width: 8px;
+  margin-left: 5px;
+}
+
+.accordion-icon--rotated {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+
+.flight-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  border: 2px solid #B6D0E2;
+}
+
+.total-price-div {
+  display: flex;
+  padding: 20px;
+  font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+  .div-container {
+    flex-direction: column;
+  }
+
+  .left-div {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-div {
+    width: 100%;
+    flex-grow: 0;
+  }
+
+  .meal-list {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    flex-wrap: wrap;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .div-container {
+    flex-direction: column;
+  }
+
+  .left-div {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-div {
+    width: 100%;
+    flex-grow: 0;
+  }
+
+  .meal-list {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    flex-wrap: wrap;
+  }
+  
+}
+
+.pagination-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px;
+}
+
+.pagination-button {
+  background-color: #0074d9;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.page-number {
+  font-size: 16px;
+  margin: 0 12px;
+}
+
+.pagination-button.active {
+  background-color: #4CAF50;
+}
+
